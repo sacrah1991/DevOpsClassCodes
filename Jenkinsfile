@@ -1,11 +1,12 @@
 pipeline{
     agent{
-        label ("master")
-   }
+        label "any"
+    }
     stages{
         stage("Compile"){
             steps{
                 echo "Compiling the code"
+                mvn 'compile'
             }
         }
     }
