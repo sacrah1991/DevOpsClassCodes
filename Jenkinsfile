@@ -25,7 +25,7 @@ pipeline {
         
         stage('Example') {
             steps {
-                echo "${env.JENKINS_URL}"
+                echo "${env.BUILD_NUMBER}"
             }
         }
     
