@@ -1,5 +1,5 @@
 pipeline {
-  agent {any}
+  agent any
       stages {
         stage ('Check maven version')
           steps {
