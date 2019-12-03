@@ -1,7 +1,7 @@
 pipeline{
     agent{
-        label "any"
-    }
+        label ("any")
+   }
     stages{
         stage("Compile"){
             steps{
