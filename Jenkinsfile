@@ -1,10 +1,10 @@
-pipeline {
-    agent any
-
+pipeline{
+    agents any
     stages {
-        stage ('compile')
-        steps{
-        sh 'mvn compile'
+        stage('Compile'){
+            steps{
+                sh 'mvn compile'
+            } 
         }
-}
+    }
 }
