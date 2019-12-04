@@ -17,6 +17,9 @@ pipeline{
                 steps{
                     sh 'mvn test'
                 }
+                steps{
+                    sh 'pwd'
+                }
             } 
             stage('package'){
                 steps{
@@ -24,4 +27,5 @@ pipeline{
             }    
         }
     }
+
 }
