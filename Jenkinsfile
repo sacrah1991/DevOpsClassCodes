@@ -22,17 +22,10 @@ pipeline {
                 junit 'target/surefire-reports/*.xml'
             }
         }
-        
-        stage('Example') {
-            steps {
-                echo "${env.BUILD_NUMBER}"
+        stage('unit test'){
+                sh 'mvn cobertura:cobertura Dcobertura.report format=xml'
             }
-        }
-    
-
-    
-                
-            
+        
         
         stage ('package'){
             steps {
