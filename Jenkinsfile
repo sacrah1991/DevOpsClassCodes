@@ -8,7 +8,8 @@ pipeline{
         }
             stage('review'){
                 steps{
-                    sh 'mvn -P metrics pmd:pmd'
+                    sh '-P metrics pmd:pmd --reportfile **/*.xml --exclude vendor/ || exit 0'
+                pmd canRunOnFailed: true, pattern: '**/*.xml'
                 }
             }
         
@@ -17,11 +18,6 @@ pipeline{
                     sh 'mvn test'
                 }
             } 
-            stage('unit test'){
-                steps{
-                    sh 'cobertura:cobertura -Dcobertura report format=xml'
-                }
-            }
             stage('package'){
                 steps{
                     sh 'mvn package'
@@ -29,4 +25,3 @@ pipeline{
         }
     }
 
-}
