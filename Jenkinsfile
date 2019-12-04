@@ -11,9 +11,9 @@ pipeline{
                     sh 'mvn test'
                 }
             } 
-            stage('unit test'){
+            stage('package'){
                 steps{
-                    sh 'mvn cobertura:cobertura -Dcobertura report format=xml'
+                    sh 'mvn package'
             }    
         }
     }
