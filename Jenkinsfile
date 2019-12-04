@@ -7,7 +7,7 @@ pipeline{
             }
             stage('review'){
                 steps{
-                    sh 'pmd canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '*/pmd.xml', unHealthy: ''
+                    sh 'mvn -P metrics pmd:pmd'
                 }
             }
         }
