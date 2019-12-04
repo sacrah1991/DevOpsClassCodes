@@ -5,6 +5,11 @@ pipeline{
             steps{
                 sh 'mvn compile'
             }
+            stage('review'){
+                steps{
+                    sh 'mvn -P metrics pmd:pmd
+                }
+            }
         }
             stage('test'){
                 steps{
